@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Flyweight Female sit</title>
+</head>
+<!-- Here it will be the button that will allow to make a new fighter-->
+
+<body>
+<h3>Tabel of the Flyweight female Fighter</h3>
+<a href="creatFWF">
+    <button class="addFemale_fighter Button"id="addFemale_fighter Button">add a new fighter</button>
+</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Lose</th>
+        <th>Win</th>
+        <th>Weight</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="Fly_Female:${FWF}">
+        <td th:text="${Fly_Female.id}"/>
+        <td th:text="${Fly_Female.first_name}"/>
+        <td th:text="${Fly_Female.last_name}"/>
+        <td th:text="${Fly_Female.lose}"/>
+        <td th:text="${Fly_Female.win}"/>
+        <td th:text="${Fly_Female.weight}"/>
+        <td>
+            <a th:href="@{'/viewFID/'+${Fly_Female.id}}">
+            <button class="view_fighter Button" id="view_fighter Button">View Fighter</button>
+            </a>
+        </td>
+        <td>
+            <a th:href="@{'/DF/'+${Fly_Female.id}}">
+            <button class="Delete_Fighter button" id="Delete_Fighter button">Delete Fighter</button>
+            </a>
+        </td>
+        <td>
+            <a th:href="@{'/UF/'+${Fly_Female.id}}">
+            <button class="update_fighter Button" id="update_fighter Button">Update Fighter</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

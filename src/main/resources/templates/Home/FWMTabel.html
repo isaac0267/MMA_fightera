@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Flyweight_male Tabel</title>
+
+    <!-- This button will allow to add the new fighter a-->
+
+</head>
+<body>
+<h3> Flyweight male Fighter</h3>
+<!-- This button will allow to add the new fighter a-->
+<a href="creatFWMF">
+    <button class="creatFWMF-button" id="creatFWMF-button"> Add a new Fighter</button>
+</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Lose</th>
+        <th>Win</th>
+        <th>Weight</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="FWMF:${FMWFS}">
+        <td th:text="${FWMF.id}"/>
+        <td th:text="${FWMF.first_name}"/>
+        <td th:text="${FWMF.last_name}"/>
+        <td th:text="${FWMF.lose}"/>
+        <td th:text="${FWMF.win}"/>
+        <td th:text="${FWMF.weight}"/>
+        <td>
+            <a th:href="@{'/viewFigher/'+${FWMF.id}}">
+                <button class="View_FWMF_button" id="View_FWMF_button">View Fighter</button>
+            </a>
+        </td>
+        <td>
+            <a th:href="@{'/deleteFigher/'+${FWMF.id}}">
+                <button class="Delete_FWMF_button" id="Delete_FWMF_button">Delete Fighter</button>
+            </a>
+        </td>
+        <td>
+            <a th:href="@{'/updateFigher/'+${FWMF.id}}">
+                <button class="Update_FWMF_button" id="Update_FWMF_button">Update Fighter</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<a href="FWFTabel">
+    <button class="click_button" id="click_button">Click here to see Flyweight female tabel</button>
+</a>
+</body>
+</html>

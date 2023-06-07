@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Here you can update the info</title>
+</head>
+<body>
+<form action="/updateFWMF"method="post">
+ <input type="text"name="id"th:value="${FWMF.id}" style="display: none">
+  <br>
+  <input type="text"name="first_name" th:value="${FWMF.first_name}">
+  <br>
+  <input type="text"name="last_name"th:value="${FWMF.last_name}">
+  <br>
+  <input type="text"name="lose"th:value="${FWMF.lose}">
+  <br>
+  <input type="text"name="win"th:value="${FWMF.win}">
+  <br>
+  <input type="text"name="weight"th:value="${FWMF.weight}">
+ <br>
+ <input type="submit"value="Save change">
+</form>
+</body>
+</html>

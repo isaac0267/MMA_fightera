@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Strawwight </title>
+</head>
+<body>
+<form action="/updateFighter" method="post">
+    <input type="text" name="id" th:value="${fighter.id}"style="display: none">
+    <input type="text" name="first_name" th:value="${fighter.first_name}">
+    <input type="text" name="last_name" th:value="${fighter.last_name}">
+    <input type="text" name="lose" th:value="${fighter.lose}">
+    <input type="text" name="win" th:value="${fighter.win}">
+    <input type="text" name="weight" th:value="${fighter.weight}">
+    <input type="submit" value="save changes">
+</form>
+</body>
+</html>

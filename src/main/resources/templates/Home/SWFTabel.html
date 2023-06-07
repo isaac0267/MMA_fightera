@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MMA Fighter</title>
+</head>
+<body>
+<h1> The real fighter </h1>
+<a href="createSWF">
+    <button class="creat-button,creat" id="creat-button"> add a new fighter</button>
+</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>lose</th>
+        <th>win</th>
+        <th>weight</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--this for making the table -->
+    <tr th:each="fighter:${fighters}">
+        <td th:text="${fighter.id}"/>
+        <td th:text="${fighter.first_name}"/>
+        <td th:text="${fighter.last_name}"/>
+        <td th:text="${fighter.lose}"/>
+        <td th:text="${fighter.win}"/>
+        <td th:text="${fighter.weight}"/>
+        <td>
+            <!--This code in html will make the button -->
+            <a th:href="@{'/viewFighter/'+${fighter.id}}">
+           <button class="button-viewone"id="button_viewone"> View Fighter</button>
+            </a>
+        </td>
+        <td>
+         <a th:href="@{'/delete/'+${fighter.id}}">
+          <button class="delet-button"id="delet-button"> Delete Fighter</button>
+             <br>
+         </a>
+        </td>
+        <td>
+          <a th:href="@{'/update/'+${fighter.id}}">
+          <button class="update-button"id="update-button"> Update Fighter</button>
+          </a>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<br>
+<a href="FWMTabel">
+  <button class="FWM_Button"id="FWM_Button"> Click her to see Flyweight Male Fighter</button>
+</a>
+</body>
+</html>
